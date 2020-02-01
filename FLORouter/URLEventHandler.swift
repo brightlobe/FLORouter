@@ -61,7 +61,7 @@ public final class URLEventHandler: NSObject {
     @discardableResult
     @objc
     public func removeListener(_ listener: URLEventListener) -> Bool {
-        guard let index = self.listeners.index(where: { $0.object === listener }) else { return false }
+        guard let index = self.listeners.firstIndex(where: { $0.object === listener }) else { return false }
         self.listeners.remove(at: index)
         
         return true
